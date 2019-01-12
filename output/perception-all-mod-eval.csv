@@ -1,0 +1,22 @@
+label,citation,class,input,partial_cor.estimate,partial_cor.conf.low,partial_cor.conf.high
+wang_13_roughness_orig,"Wang et al. (2013, original)",Spectral interference,Audio,0.16752055059730803,0.054945618356532513,0.2758900677831817
+mir.inharmonicity,MIRtoolbox,Periodicity,Audio,0.17974692429203676,0.06750481713180656,0.28749615246521837
+ess.roughness,Essentia,Spectral interference,Audio,0.19225498574686978,0.08039028699923119,0.2993369785934152
+mir.vass,MIRtoolbox (Vassilakis),Spectral interference,Audio,0.3803161394076696,0.27874025277957465,0.4734770950773858
+milne_13_harmonicity,Milne (2013),Periodicity,Symbolic,0.44430830516920006,0.3482690937026257,0.5311168767533074
+mir.seth.min_weighted,"MIRtoolbox (Sethares, v2)",Spectral interference,Audio,0.45613190041951973,0.36123239226950365,0.5416795450937043
+wang_13_roughness,"Wang et al. (2013, new)",Spectral interference,Symbolic,0.46267041504878403,0.368416955443019,0.5475091820721035
+vass_01_roughness,Vassilakis (2001),Spectral interference,Symbolic,0.4781329495294088,0.3854522026315123,0.5612626484613036
+bowl_18_min_freq_dist,Bowling et al. (2018),Spectral interference,Symbolic,0.5387499435116851,0.45284954580250897,0.6147404827548828
+parn_94_complex,Parncutt & Strasburger (1994),Periodicity,Symbolic,0.5565378231114626,0.47281517890219865,0.6303019120764647
+seth_93_roughness,Sethares (1993),Spectral interference,Symbolic,0.5590746921466363,0.4756696561490465,0.6325164305445923
+mir.seth,MIRtoolbox (Sethares),Spectral interference,Audio,0.5701666360114117,0.48817094250898485,0.6421848807920422
+parn_88_root_ambig,Parncutt (1988),Periodicity,Symbolic,0.6233956915827266,0.5486351404887233,0.6882660863962686
+jl_12_tonal,Johnson-Laird et al. (2012),Culture,Symbolic,0.6282039434580835,0.55413573732895,0.6924030430712597
+gill_09_harmonicity,Gill & Purves (2009),Periodicity,Symbolic,0.6466444736443734,0.5752916822143944,0.7082299905162633
+parn_94_pure,Parncutt & Strasburger (1994),Spectral interference,Symbolic,0.6478382658213483,0.5766645614283789,0.7092524570906152
+huron_94_dyadic,Huron (1994),Spectral interference,Symbolic,0.6917811056818782,0.6274807722837163,0.7467099436155582
+stolz_15_periodicity,Stolzenburg (2015),Periodicity,Symbolic,0.7170384619009044,0.6569388071117004,0.7680831377580558
+har_19_corpus,New corpus-based model,Culture,Symbolic,0.7188675904756252,0.6590792968059808,0.7696265728187572
+har_18_harmonicity,Harrison & Pearce (2018),Periodicity,Symbolic,0.7238960924616387,0.6649687651527181,0.7738666129657584
+hutch_78_roughness,Hutchinson & Knopoff (1978),Spectral interference,Symbolic,0.7702202231709201,0.7195713141395544,0.8127176191758984
