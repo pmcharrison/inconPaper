@@ -48,20 +48,7 @@ add_extra_wang_analyses <- function(x) {
 add_toolboxes <- function(x) {
   x %>% 
     add_toolbox("mir", "output/mirtoolbox/mirroughness/v1/results.csv") %>%
-    add_toolbox("ess", "output/essentia/v2/results.csv") %>% 
-    add_toolbox("mcgill", "output/timbretoolbox/v1/results.csv") %>% 
-    impute_mcgill()
-}
-
-impute_mcgill <- function(x) {
-  # Impute with the maximum, because NAs come when the sound was considered
-  # to be completely inharmonic.
-  cols <- c("mcgill.inharmonicity.mean", "mcgill.inharmonicity.median")
-  for (col in cols) {
-    ind <- is.na(x[[col]])
-    x[ind, col] <- max(x[[col]], na.rm = TRUE)
-  }
-  x
+    add_toolbox("ess", "output/essentia/v2/results.csv")
 }
 
 add_toolbox <- function(x, label, file) {
