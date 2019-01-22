@@ -6,6 +6,7 @@ library(hrep)
 requireNamespace("incon")
 requireNamespace("inconData")
 
+R.utils::mkdirs("cache/incon")
 incon <- memoise(incon::incon, cache = cache_filesystem("cache/incon"))
 roughness_wang <- memoise(wang13::roughness_wang, 
                           cache = cache_filesystem("cache/roughness_wang"))
