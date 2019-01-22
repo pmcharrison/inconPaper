@@ -15,18 +15,22 @@ in the perception and composition of Western music”.
 
 ## Dependencies
 
-The R scripts depend on several common open-source R packages, which can
-be installed using `install.packages()`: `tidyverse`, `boot`, `memoise`,
-`purrrlyr`, `glue`, `broom`, `zeallot`, `withr`, `jsonlite`, `plyr`,
-`cowplot`, `AICcmodavg`, `margins`, `prediction`, `cocor`, and
-`R.utils`.
+The R scripts depend on several open-source R packages, which can
+be installed with the following commands in R
+(internet connection required):
 
-They also depend on some music-specific packages, which can be installed
-at the following links:
-
-  - [hrep](https://github.com/pmcharrison/hrep)
-  - [incon](https://github.com/pmcharrison/incon)
-  - [inconData](https://github.com/pmcharrison/inconData)
+```r 
+install.packages(c(
+  'tidyverse', 'glue', 'broom', 'zeallot', 'withr', 'jsonlite',
+  'plyr', 'cowplot', 'AICcmodavg', 'margins', 'prediction', 'cocor',
+  'R.utils', 'devtools'
+))
+devtools::install_github(c(
+  'pmcharrison/hrep',
+  'pmcharrison/incon',
+  'pmcharrison/inconData'
+))
+```
 
 We also used version 2.1 of Essentia and version 1.6.1 of MIRtoolbox.
 For the former, it is necessary to install a Docker image for Essentia
