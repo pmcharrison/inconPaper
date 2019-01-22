@@ -26,9 +26,10 @@ Peter M. C. Harrison & Marcus T. Pearce's manuscript
 ## Dependencies
 
 The R scripts depend on several common open-source R packages,
-which can be installed using the following commands:
+which can be installed using the following commands in R
+(internet connection required):
 
-```{r}
+```r
 install.packages(c(
   "tidyverse", "boot", "memoise", "purrrlyr", "glue", "broom", "zeallot", 
   "withr", "jsonlite", "plyr", "cowplot", "AICcmodavg", "margins",

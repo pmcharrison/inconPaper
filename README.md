@@ -15,21 +15,19 @@ in the perception and composition of Western music”.
 
 ## Dependencies
 
-The R scripts depend on several open-source R packages, which can
-be installed with the following commands in R
-(internet connection required):
+The R scripts depend on several common open-source R packages, which can
+be installed using the following commands in R (internet connection
+required):
 
-```r 
+``` r
 install.packages(c(
-  'tidyverse', 'glue', 'broom', 'zeallot', 'withr', 'jsonlite',
-  'plyr', 'cowplot', 'AICcmodavg', 'margins', 'prediction', 'cocor',
-  'R.utils', 'devtools'
+  "tidyverse", "boot", "memoise", "purrrlyr", "glue", "broom", "zeallot", 
+  "withr", "jsonlite", "plyr", "cowplot", "AICcmodavg", "margins",
+  "prediction", "cocor", "R.utils", "devtools"
 ))
-devtools::install_github(c(
-  'pmcharrison/hrep',
-  'pmcharrison/incon',
-  'pmcharrison/inconData'
-))
+devtools::install_github(paste("pmcharrison/", c(
+  "hrep", "incon", "inconData"
+), sep = ""))
 ```
 
 We also used version 2.1 of Essentia and version 1.6.1 of MIRtoolbox.
@@ -68,7 +66,7 @@ MIRtoolbox model outputs are compiled by running
 however, you must edit the following variables to match your current
 directory locations:
 
-  - `in_dir` - Directory containing the Bowling et al. (2018) .wav
+  - `in_dir` - Directory containing the Bowling et al. (2018) .wav
     files;
   - `out_dir` - Output directory;
   - `pkg_path` - Directory of MIRtoolbox installation.
