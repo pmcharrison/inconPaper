@@ -42,8 +42,3 @@ p2 <- plot_lm_coef(mod, opt$features)
 p3 <- plot_lm_pred(mod, dat_bowling)
 c(mod_perf, p4) %<-% generalise_lm(mod, opt)
 combine_panels(p1, p2, p3, p4)
-
-# dat <- readRDS("output/bowling.rds") %>% arrange(id)
-# dat2 <- readRDS("output/archive/bowling2018.rds") %>% as.tibble %>% arrange(bowling_id)
-# all(dat$id == dat2$bowling_id)
-
