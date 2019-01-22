@@ -87,7 +87,7 @@ plot_predict <- function(best, opt, only_observed) {
   row.names(res) <- NULL
   res$corpus <- label_corpus(res$corpus, opt)
   
-  r_df <- res %>% as.tibble() %>% group_by(corpus) %>% 
+  r_df <- res %>% as_tibble() %>% group_by(corpus) %>% 
     summarise(r = cor(pred, actual) %>% round(2))
   
   ggplot(res, aes(x = pred, y = actual)) + 

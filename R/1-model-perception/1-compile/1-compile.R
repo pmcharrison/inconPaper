@@ -30,7 +30,7 @@ add_main_analyses <- function(x) {
           x_int = pi_chord_int[[1]],
           par = list(gill_09_harmonicity = list(tonic = tuning_tonic_pc_int))
         ), .progress = "text") %>% 
-    map(as.list) %>% map(as.tibble) %>% bind_rows() %>% 
+    map(as.list) %>% map(as_tibble) %>% bind_rows() %>% 
     bind_cols(x, .)
 }
 

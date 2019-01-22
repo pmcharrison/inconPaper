@@ -27,7 +27,7 @@ add_pi_chord <- function(df) {
 add_consonance <- function(df, models) { # wololo
   bind_cols(
     df,
-    plyr::ldply(df$pi_chord, function(x) as.tibble(as.list(incon::incon(x, models))),
+    plyr::ldply(df$pi_chord, function(x) as_tibble(as.list(incon::incon(x, models))),
                 .progress = "text"), 
   )
 }
