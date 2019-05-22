@@ -20,8 +20,9 @@ add_observed <- function(df) {
 }
 
 add_pi_chord <- function(df) {
-  mutate(df,
-         pi_chord = map(pc_chord_type, ~ pi_chord(60L + as.integer(.))))
+  stopifnot(all(df$pc_chord_type_id == seq_len(nrow(df))))
+  mutate(df, 
+         pi_chord = voicer::pc_chord_type_ideal_voicings)
 }
 
 add_consonance <- function(df, models) { # wololo
@@ -33,5 +34,5 @@ add_consonance <- function(df, models) { # wololo
 }
 
 add_chord_size <- function(df) {
-  mutate(df, chord_size = map_int(pi_chord, length))
+  mutate(df, chord_size = map_int(pc_chord_type, length))
 }
