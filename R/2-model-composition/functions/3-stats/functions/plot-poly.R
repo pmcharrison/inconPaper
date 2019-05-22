@@ -65,15 +65,18 @@ plot_marginals <- function(best, opt, only_observed) {
                 aes(x = xvals, ymin = lower, ymax = upper, fill = feature), 
                 alpha = 0.25) +
     geom_line(data = res, aes(x = xvals, y = yvals)) + 
-    geom_rug(mapping = aes(x = feature_val, colour = feature), 
-             data = raw, alpha = 0.03) +
+    geom_rug(mapping = aes(x = feature_val, colour = feature, alpha = corpus), 
+             data = raw) +
+    scale_alpha_manual(values = if (only_observed) 
+      c(0.03, 0.15, 0.15) else rep(0.03, times = 3)) +
     facet_grid(feature ~ corpus, scales = "free") +
     scale_x_continuous("Feature value", limits = opt$trim_marginals) +
     scale_y_continuous("Chord frequency (marginal prediction)") +
     scale_color_manual(values = c("#B50000", "#11A3FF", "#000000"), guide = FALSE) +
     scale_fill_manual(values = c("#B50000", "#11A3FF", "#000000"), guide = FALSE) +
     theme(aspect.ratio = 1,
-          panel.spacing = unit(0.8, "lines"))
+          panel.spacing = unit(0.8, "lines"),
+          legend.position = "none")
 }
 
 plot_predict <- function(best, opt, only_observed) {
@@ -92,14 +95,16 @@ plot_predict <- function(best, opt, only_observed) {
   
   ggplot(res, aes(x = pred, y = actual)) + 
     geom_point(shape = 21) +
-    scale_x_continuous("Predicted frequency") + 
+    scale_x_continuous("Predicted frequency", 
+                       breaks = if (only_observed) 
+                         seq(from = -2, to = 6) else waiver()) + 
     scale_y_continuous("Actual frequency") +
     geom_text(data = r_df, 
               aes(label = paste("~italic(r) ==", r)), 
               parse = TRUE,
               x = -Inf, y = Inf, 
               hjust = -0.1, vjust = 1.5) +
-    facet_wrap(~ corpus, nrow = 1) +
+    facet_wrap(~ corpus, nrow = 1, scales = "free") +
     theme(aspect.ratio = 1)
 }
 
