@@ -14,12 +14,12 @@ incon_mods <- function() {
 
 toolbox_mods <- function() {
   tribble(~ label, ~ citation, ~ class, ~ consonance, ~ spectrum_sensitive, ~ continuous_pitch,
-          "wang_13_roughness_orig", "Wang et al. (2013, original)", "Spectral interference", FALSE, TRUE, TRUE,
-          "mir.seth", "MIRtoolbox (Sethares)", "Spectral interference", FALSE, TRUE, TRUE,
-          "mir.seth.min_weighted", "MIRtoolbox (Sethares, v2)", "Spectral interference", FALSE, TRUE, TRUE,
-          "mir.vass", "MIRtoolbox (Vassilakis)", "Spectral interference", FALSE, TRUE, TRUE,
-          "mir.inharmonicity", "MIRtoolbox", "Periodicity", FALSE, TRUE, TRUE,
-          "ess.roughness", "Essentia", "Spectral interference", FALSE, TRUE, TRUE,
+          "wang_13_roughness_orig", "Wang et al. (2013, original)", "Interference", FALSE, TRUE, TRUE,
+          "mir.seth", "MIRtoolbox (Sethares)", "Interference", FALSE, TRUE, TRUE,
+          "mir.seth.min_weighted", "MIRtoolbox (Sethares, v2)", "Interference", FALSE, TRUE, TRUE,
+          "mir.vass", "MIRtoolbox (Vassilakis)", "Interference", FALSE, TRUE, TRUE,
+          "mir.inharmonicity", "MIRtoolbox", "Periodicity/harmonicity", FALSE, TRUE, TRUE,
+          "ess.roughness", "Essentia", "Interference", FALSE, TRUE, TRUE,
   ) %>% 
     mutate(input = "Audio")
           # "ess.inharmonicity", "Essentia",

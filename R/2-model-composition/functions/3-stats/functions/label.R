@@ -7,13 +7,12 @@ label_corpus <- function(corpus, opt, detail = FALSE) {
                   warn_missing = FALSE)
 }
 
-label_feature <- function(feature, opt, label_absence = FALSE) {
+label_feature <- function(feature, opt, reverse = FALSE) {
   x <- plyr::mapvalues(feature, from = opt$features, to = names(opt$features),
                        warn_missing = FALSE)
-  if (label_absence) {
-    x <- paste(x, ifelse(feature %in% opt$absence,
-                         "\n(absence)", ""), 
-               sep = "")
+  if (reverse) {
+    factor(x, levels = rev(names(opt$features)))
+  } else {
+    factor(x, levels = names(opt$features))
   }
-  x
 }

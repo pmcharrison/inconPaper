@@ -23,8 +23,8 @@ plot_all_mods <- function(x) {
     select(label, citation, class, input, starts_with("partial_cor")) %>% 
     arrange(partial_cor.estimate) %>% 
     mutate(label = factor(label, levels = label),
-           class = factor(class, levels = c("Spectral interference",
-                                            "Periodicity",
+           class = factor(class, levels = c("Interference",
+                                            "Periodicity/harmonicity",
                                             "Culture",
                                             "Numerosity"))) %T>%
     write_csv(glue("{file}.csv"))

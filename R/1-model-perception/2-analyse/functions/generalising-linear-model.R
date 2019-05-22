@@ -39,8 +39,8 @@ plot_generalise_performance <- function(x, opt) {
         combined_sans_chord_size = "Composite (no chord size)",
         combined = "Composite",
         har_19_corpus = "Culture",
-        har_18_harmonicity = "Periodicity",
-        hutch_78_roughness = "Spectral interference",
+        har_18_harmonicity = "Periodicity/harmonicity",
+        hutch_78_roughness = "Interference",
       )) %>% 
     ggplot(aes(x = dataset,
                y = estimate,

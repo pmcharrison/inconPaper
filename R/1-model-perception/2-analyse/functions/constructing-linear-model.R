@@ -5,8 +5,8 @@ plot_lm_coef <- function(x, pred) {
       term, 
       chord_size = "Chord size",
       har_19_corpus = "Culture",
-      har_18_harmonicity = "Periodicity",
-      hutch_78_roughness = "Spectral interference"
+      har_18_harmonicity = "Periodicity/harmonicity",
+      hutch_78_roughness = "Interference"
     )) %>% 
     ggplot(aes(x = label, y = beta, ymin = beta.conf.low, ymax = beta.conf.high,
                fill = label)) +

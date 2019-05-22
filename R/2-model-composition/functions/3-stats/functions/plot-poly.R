@@ -50,15 +50,10 @@ plot_marginals <- function(best, opt, only_observed) {
     }
   }
   res$corpus <- label_corpus(res$corpus, opt, detail = FALSE)
-  res$feature <- label_feature(res$feature, opt, label_absence = TRUE)
+  res$feature <- label_feature(res$feature, opt)
   
   raw$corpus <- label_corpus(raw$corpus, opt, detail = FALSE)
-  raw$feature <- label_feature(raw$feature, opt, label_absence = TRUE)
-  
-  res$feature <- factor(res$feature,
-                        levels = sort(unique(res$feature), decreasing = TRUE))
-  raw$feature <- factor(raw$feature,
-                        levels = sort(unique(raw$feature), decreasing = TRUE))
+  raw$feature <- label_feature(raw$feature, opt)
   
   ggplot() +
     geom_ribbon(data = res, 
@@ -118,7 +113,7 @@ plot_perm_imp <- function(best, opt, only_observed) {
                   stringsAsFactors = FALSE)
     res <- rbind(res, df_i)
   }
-  res$feature <- label_feature(res$feature, opt)
+  res$feature <- label_feature(res$feature, opt, reverse = TRUE)
   res$corpus <- label_corpus(res$corpus, opt)
   p <- ggplot(res, aes(x = feature, y = imp, fill = feature)) +
     geom_bar(stat = "identity", colour = "black") +

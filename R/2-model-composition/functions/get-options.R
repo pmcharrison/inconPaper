@@ -9,9 +9,9 @@ get_options <- function(boot_perm_imp = TRUE) {
     "Jazz lead sheets"
   )
   features <- c(
-    `Chord size` = "chord_size",
-    `Spectral interference` = "hutch_78_roughness",
-    `Periodicity` = "har_18_harmonicity"
+    `Interference` = "hutch_78_roughness",
+    `Periodicity/harmonicity` = "har_18_harmonicity",
+    `Number of notes` = "chord_size"
   )
   reverse <- character() # c("hutch_78_roughness")
   absence <- character() # c("hutch_78_roughness")
