@@ -1,8 +1,7 @@
 source("R/2-model-composition/load-code.R")
-options(warn = 2)
 
 recompile <- TRUE # set to FALSE to skip the slow data compilation stage
-boot_perm_imp <- FALSE # set to TRUE to enable (very slow) bootstrapped CIs
+boot_perm_imp <- FALSE # set to TRUE to enable (very slow) bootstrapped CIs (takes c. 2 days)
 
 theme_set(theme_bw() + theme(panel.grid = element_blank(),
                              strip.background = element_blank(), 
