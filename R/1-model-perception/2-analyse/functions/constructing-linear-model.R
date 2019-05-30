@@ -3,7 +3,7 @@ plot_lm_coef <- function(x, pred) {
     filter(term %in% pred) %>% 
     mutate(label = recode_factor(
       term, 
-      chord_size = "Chord size",
+      chord_size = "Number of notes",
       har_19_corpus = "Culture",
       har_18_harmonicity = "Periodicity/harmonicity",
       hutch_78_roughness = "Interference"

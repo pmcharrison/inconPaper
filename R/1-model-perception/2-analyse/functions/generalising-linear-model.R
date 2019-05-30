@@ -36,7 +36,7 @@ plot_generalise_performance <- function(x, opt) {
       ),
       mod = recode_factor(
         mod,
-        combined_sans_chord_size = "Composite (no chord size)",
+        combined_sans_chord_size = "Composite (without num. notes)",
         combined = "Composite",
         har_19_corpus = "Culture",
         har_18_harmonicity = "Periodicity/harmonicity",
