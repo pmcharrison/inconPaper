@@ -38,7 +38,7 @@ install.packages(c(
   "prediction", "cocor", "R.utils", "devtools"
 ))
 devtools::install_github(paste("pmcharrison/", c(
-  "hrep", "incon", "inconData"
+  "hrep", "incon", "inconData", "voicer"
 ), sep = ""))
 ```
 
