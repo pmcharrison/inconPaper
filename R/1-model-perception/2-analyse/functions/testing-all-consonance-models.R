@@ -17,8 +17,12 @@ get_adj_r2 <- function(model, dat) {
     lm(data = dat) %>% glance %>% select(adj.r.squared) %>% as.numeric
 }
 
-plot_all_mods <- function(x) {
+plot_all_mods <- function(x, opt) {
   file <- "output/perception-all-mod-eval"
+  
+  x$citation[x$label == "har_19_corpus"] <- if (opt$thesis) "This chapter" else "This paper"
+  if (opt$thesis) x$citation[x$label == "har_18_harmonicity"] <- "This chapter"
+  
   df <- x %>% 
     select(label, citation, class, input, starts_with("partial_cor")) %>% 
     arrange(partial_cor.estimate) %>% 
@@ -61,7 +65,7 @@ add_stats_all_mods <- function(mods, dat) {
 all_mods_bowling <- function(dat, opt) {
   stats <- add_stats_all_mods(mods = all_mods() %>% filter(!label %in% opt$exclude), 
                      dat = dat)
-  plot <- plot_all_mods(stats)
+  plot <- plot_all_mods(stats, opt)
   list(stats, plot)
 }
 

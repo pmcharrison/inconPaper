@@ -11,6 +11,8 @@ theme_set(theme_classic() +
                   axis.text.y = element_text(colour = "black"),
                   axis.ticks = element_line(colour = "black")))
 
+R.utils::mkdirs("cache/incon")
+
 for (f in list.files("R/1-model-perception/2-analyse/functions", 
                      full.names = TRUE)) source(f)
 
@@ -31,7 +33,8 @@ opt <- list(
     "gill_09_harmonicity",
     "jl_12_tonal",
     "parn_88_root_ambig"
-  )
+  ),
+  thesis = FALSE
 )
 opt$features <- c("chord_size", opt$selected)
 
