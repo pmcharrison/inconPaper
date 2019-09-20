@@ -1,4 +1,5 @@
 source("R/2-model-composition/load-code.R")
+R.utils::mkdirs("cache/boot_perm_int")
 
 recompile <- TRUE # set to FALSE to skip the slow data compilation stage
 boot_perm_imp <- FALSE # set to TRUE to enable (very slow) bootstrapped CIs (takes c. 2 days)
