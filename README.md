@@ -6,8 +6,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2546043.svg)](https://doi.org/10.5281/zenodo.2546043)
 
 This repository, `inconPaper`, contains the analysis scripts for Peter
-M. C. Harrison & Marcus T. Pearce’s manuscript “Instantaneous consonance
-in the perception and composition of Western music”.
+M. C. Harrison & Marcus T. Pearce’s manuscript “Simultaneous consonance
+in music perception and composition”.
 
 ## Folders
 
