@@ -123,7 +123,9 @@ get_generalise_data <- function() {
   jl12a <- inconData::jl12a
   jl12b <- inconData::jl12b
   lah16 <- inconData::lah16
-  sch03 <- inconData::sch03 %>% mutate(pi_chord = map(pi_chord_type, pi_chord))
+  sch03 <- inconData::sch03 %>% mutate(pi_chord = map(pi_chord_type, 
+                                                      pi_chord,
+                                                      force = TRUE))
   as.list(environment())
 }
 
