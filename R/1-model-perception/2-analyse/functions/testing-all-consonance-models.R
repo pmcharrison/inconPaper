@@ -46,7 +46,7 @@ plot_all_mods <- function(x, opt) {
                                            "#11A3FF",
                                            "#B50000") %>% rev) +
     scale_linetype_manual("Input", values = c("dotted", "solid")) +
-    geom_bar(stat = "identity", colour = "black", width = 0.75) + 
+    geom_bar(stat = "identity", colour = "black", width = 0.75, orientation = "x") + 
     geom_errorbar(width = 0.5, linetype = "solid") +
     coord_flip() +
     guides(linetype = guide_legend(override.aes = list(fill = "white")))
@@ -57,7 +57,7 @@ add_stats_all_mods <- function(mods, dat) {
   mods %>% 
     mutate(partial_cor = map2(label, consonance, get_partial_cor, dat),
            adj_r2 = map_dbl(label, get_adj_r2, dat)) %>% 
-    unnest() %>% 
+    unnest(cols = c("partial_cor")) %>% 
     mutate(., cocor = cocor_all_mods(., dat)) %T>%
     saveRDS("output/perception-all-mod-stats.rds")
 }

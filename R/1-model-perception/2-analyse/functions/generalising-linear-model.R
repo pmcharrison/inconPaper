@@ -51,7 +51,8 @@ plot_generalise_performance <- function(x, opt) {
     geom_bar(stat = "identity",
              colour = "black",
              position = position_dodge(width = 0.9),
-             width = 0.7) +
+             width = 0.7, 
+             orientation = "x") +
     geom_errorbar(position = position_dodge(width = 0.9),
                   width = 0.3, linetype = "solid") +
     scale_x_discrete("Dataset") +
@@ -96,7 +97,7 @@ get_generalise_performance <- function(x, x_label,  opt) {
                         mult <- if (reverse) - 1 else 1
                         cor.test(x$rating, x[[mod]] * mult) %>% glance
                       })) %>% 
-    unnest
+    unnest(cols = "res")
   mutate(df, cocor = map(mod, compare_all_mods, x, mods, df))
 }
 

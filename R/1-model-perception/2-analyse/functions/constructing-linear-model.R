@@ -10,7 +10,7 @@ plot_lm_coef <- function(x, pred) {
     )) %>% 
     ggplot(aes(x = label, y = beta, ymin = beta.conf.low, ymax = beta.conf.high,
                fill = label)) +
-    geom_bar(stat = "identity", colour = "black") + 
+    geom_bar(stat = "identity", colour = "black", orientation = "x") + 
     geom_errorbar(width = 0.35) +
     scale_x_discrete("Predictor") + 
     scale_y_continuous("Beta") + 
