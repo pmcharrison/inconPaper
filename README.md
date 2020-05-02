@@ -7,7 +7,9 @@
 
 This repository, `inconPaper`, contains the analysis scripts for Peter
 M. C. Harrison & Marcus T. Pearce’s manuscript “Simultaneous consonance
-in music perception and composition”.
+in music perception and composition”. These scripts have subsequently
+been updated to reflect changes in the underlying dependencies, but the
+output artifacts remain essentially equivalent.
 
 ## Folders
 
@@ -17,20 +19,9 @@ in music perception and composition”.
 
 ## Dependencies
 
-The R scripts depend on several common open-source R packages, which can
-be installed using the following commands in R (internet connection
-required):
-
-``` r
-install.packages(c(
-  "tidyverse", "boot", "memoise", "purrrlyr", "glue", "broom", "zeallot", 
-  "withr", "jsonlite", "plyr", "cowplot", "AICcmodavg", "margins",
-  "prediction", "cocor", "R.utils", "devtools"
-))
-devtools::install_github(paste("pmcharrison/", c(
-  "hrep", "incon", "inconData", "voicer"
-), sep = ""))
-```
+The R scripts depend on several common open-source R packages. The
+precise versions of these packages are specified in renv.lock. Open the
+project in RStudio to activate the virtual environment.
 
 We also used version 2.1 of Essentia and version 1.6.1 of MIRtoolbox.
 For the former, it is necessary to install a Docker image for Essentia
